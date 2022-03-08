@@ -1,0 +1,35 @@
+<div>
+  <div class="no-margin text-center" mat-dialog-title>
+    <div class="header">
+      <h2>ReasonOfRefuse</h2>
+    </div>
+    <form (ngSubmit)="onSubmit()" style="width: 500px">
+      <mat-form-field appearance="fill" style="width: 450px">
+        <mat-label>email</mat-label>
+        <input
+          matInput
+          placeholder="Email"
+          name="email"
+          [(ngModel)]="model.email"
+          required
+          pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+        />
+      </mat-form-field>
+      <br />
+      <mat-form-field appearance="fill" style="width: 450px">
+        <mat-label>password</mat-label>
+        <input
+          matInput
+          placeholder="Password"
+          name="password"
+          [(ngModel)]="model.password"
+          required
+        />
+      </mat-form-field>
+
+      <div mat-dialog-actions>
+        <button type="submit" cdkFocusInitial>Login</button>
+      </div>
+    </form>
+  </div>
+</div>

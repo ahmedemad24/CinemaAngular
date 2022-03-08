@@ -1,0 +1,31 @@
+<div>
+  <div class="no-margin text-center" mat-dialog-title>
+    <div class="header">
+      <h2>Booking</h2>
+    </div>
+    <form (ngSubmit)="onSubmit()" style="width: 500px">
+      <mat-form-field appearance="fill">
+        <mat-label>Select an Times</mat-label>
+        <mat-select disableRipple>
+          <mat-option *ngFor="let item of Times" value="{{ item.id }}">{{
+            item.description
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <br />
+      <mat-form-field appearance="fill">
+        <mat-label>Select an Halls</mat-label>
+        <mat-select disableRipple>
+          <mat-option *ngFor="let item of Halls" value="{{ item.id }}">{{
+            item.name
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div mat-dialog-actions>
+        <button type="submit" cdkFocusInitial>Register</button>
+      </div>
+    </form>
+  </div>
+</div>

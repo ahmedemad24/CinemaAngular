@@ -1,0 +1,88 @@
+/*Responsive*/
+
+@mixin mobile-responsive {
+  @media (max-width: 767px) {
+      @content;
+  }
+}
+
+@mixin small-responsive {
+  @media only screen and (min-width: 768px) and (max-width: 991px) {
+      @content;
+  }
+}
+
+@mixin min-small-responsive {
+  @media only screen and (min-width: 768px) {
+      @content;
+  }
+}
+
+@mixin max-small-responsive {
+  @media only screen and (max-width: 991px) {
+      @content;
+  }
+}
+
+@mixin meduim-responsive {
+  @media only screen and (min-width: 991px) and (max-width: 1024px) {
+      @content;
+  }
+}
+
+@mixin min-meduim-responsive {
+  @media only screen and (min-width: 991px) {
+      @content;
+  }
+}
+@mixin min-lg-responsive {
+  @media only screen and (min-width: 1200px) {
+      @content;
+  }
+}
+
+
+/*Gradient*/
+@mixin linear-gradient($direction, $color1, $color2, $color3, $color4, $color5) {
+  background: -webkit-linear-gradient(to $direction, $color1, $color2, $color3, $color4, $color5) !important;
+  background: linear-gradient(to $direction, $color1, $color2, $color3, $color4, $color5) !important;
+}
+
+@mixin cardInfo($color) {
+  h2 {
+      color: $color;
+  }
+  .cardImg {
+      background: $color;
+  }
+}
+
+@mixin progressBarRange($color) {
+  .dx-progressbar-range {
+      background: $color;
+      border: 1px solid $color;
+  }
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin drawProgress($progress) {
+  .circlesContainer {
+      .left {
+          transform: rotate($progress * 3.6deg);
+      }
+      @if $progress <= 50 {
+          .right {
+              display: none;
+          }
+      } @else {
+          clip: rect(auto, auto, auto, auto);
+          .right {
+              transform: rotate(180deg);
+          }
+      }
+  }
+}

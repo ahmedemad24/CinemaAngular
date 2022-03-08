@@ -1,0 +1,71 @@
+<div>
+  <div class="no-margin text-center" mat-dialog-title>
+    <div class="header">
+      <h2>ReasonOfRefuse</h2>
+    </div>
+    <form (ngSubmit)="onSubmit()" style="width: 500px">
+      <mat-form-field appearance="fill" style="width: 450px">
+        <mat-label>fristName</mat-label>
+        <input
+          matInput
+          placeholder="fristName"
+          name="fristName"
+          [(ngModel)]="AHME.fristName"
+          required
+        />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field appearance="fill" style="width: 450px">
+        <mat-label>lastName</mat-label>
+        <input
+          matInput
+          placeholder="lastName"
+          name="lastName"
+          [(ngModel)]="AHME.lastName"
+          required
+        />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field appearance="fill" style="width: 450px">
+        <mat-label>phoneNumber</mat-label>
+        <input
+          matInput
+          placeholder="phoneNumber"
+          name="phoneNumber"
+          [(ngModel)]="AHME.phoneNumber"
+        />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field appearance="fill" style="width: 450px">
+        <mat-label>password</mat-label>
+        <input
+          matInput
+          placeholder="password"
+          name="password"
+          [(ngModel)]="AHME.password"
+          required
+        />
+      </mat-form-field>
+      <br />
+
+      <mat-form-field appearance="fill" style="width: 450px">
+        <mat-label>email</mat-label>
+        <input
+          matInput
+          placeholder="ReasonOfRefuse"
+          name="email"
+          [(ngModel)]="AHME.email"
+          required
+          pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}"
+        />
+      </mat-form-field>
+
+      <div mat-dialog-actions>
+        <button type="submit" cdkFocusInitial>Register</button>
+      </div>
+    </form>
+  </div>
+</div>

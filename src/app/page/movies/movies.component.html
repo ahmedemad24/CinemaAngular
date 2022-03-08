@@ -1,0 +1,39 @@
+<div>
+  <div class="no-margin text-center" mat-dialog-title>
+    <div class="header">
+      <h2>ReasonOfRefuse</h2>
+    </div>
+    <form (ngSubmit)="onSubmit()" style="width: 500px">
+      <mat-form-field appearance="fill" style="width: 450px">
+        <mat-label>fristName</mat-label>
+        <input matInput placeholder="fristName" name="fristName" required />
+      </mat-form-field>
+      <br />
+
+      <mat-label>fristName</mat-label>
+      <input
+        type="file"
+        #file
+        formControlName="ProfilePicture"
+        (change)="onFileChange(file.files)"
+        accept="image/*"
+      />
+
+      <!-- <mat-form-field appearance="fill" style="width: 450px">
+        <input
+          type="file"
+          matInput
+          formControlName="ProfilePicture"
+          #file
+          (change)="onFileChange(file.files)"
+          class="file form-control"
+          accept="image/*"
+        />
+      </mat-form-field> -->
+
+      <div mat-dialog-actions>
+        <button type="submit" cdkFocusInitial>Register</button>
+      </div>
+    </form>
+  </div>
+</div>
