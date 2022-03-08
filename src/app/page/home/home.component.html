@@ -1,7 +1,7 @@
 <div id="site-content">
   <header class="site-header">
     <div class="container">
-      <a href="index.html" id="branding">
+      <a routerLink="/home" id="branding">
         <img src="../../../assets/images/logo.png" alt="" class="logo" />
         <div class="logo-copy">
           <h1 class="site-title">Company Name</h1>
@@ -42,11 +42,6 @@
           </li>
         </ul>
         <!-- .menu -->
-
-        <form action="#" class="search-form">
-          <input type="text" placeholder="Search..." />
-          <button><i class="fa fa-search"></i></button>
-        </form>
       </div>
       <!-- .main-navigation -->
 
@@ -59,28 +54,28 @@
         <div class="row">
           <div class="col-md-9">
             <div class="slider">
-              <ul class="slides">
+              <ul>
                 <li>
-                  <a href="#"
+                  <a routerLink="/movie/{{ data[0].id }}"
                     ><img
                       src="https://localhost:44385/{{ data[0].photoData }}"
                       alt="Slide 1"
                   /></a>
                 </li>
-                <li>
-                  <a href="#"
+                <!-- <li>
+                  <a routerLink="/movie/{{ data[1].id }}"
                     ><img
                       src="https://localhost:44385/{{ data[1].photoData }}"
                       alt="Slide 2"
                   /></a>
                 </li>
                 <li>
-                  <a href="#"
+                  <a routerLink="/movie/{{ data[2].id }}"
                     ><img
                       src="https://localhost:44385/{{ data[2].photoData }}"
                       alt="Slide 3"
                   /></a>
-                </li>
+                </li> -->
               </ul>
             </div>
           </div>
@@ -88,15 +83,17 @@
             <div class="row">
               <div class="col-sm-6 col-md-12">
                 <div class="latest-movie">
-                  <a href="#"
-                    ><img src="../../../assets/dummy/thumb-1.jpg" alt="Movie 1"
+                  <a routerLink="/movie/{{ data[1].id }}"
+                    ><img
+                      src="https://localhost:44385/{{ data[1].photoData }}"
+                      alt="Movie 1"
                   /></a>
                 </div>
               </div>
               <div class="col-sm-6 col-md-12">
                 <div class="latest-movie">
-                  <a href="#"
-                    ><img src="../../../assets/dummy/thumb-2.jpg" alt="Movie 2"
+                  <a routerLink="/movie/{{ data[1].id }}"
+                    ><img src="https://localhost:44385/{{ data[1].photoData }}"
                   /></a>
                 </div>
               </div>
@@ -300,14 +297,6 @@
             </ul>
           </div>
         </div>
-        <div class="col-md-2">
-          <div class="widget">
-            <h3 class="widget-title">Newsletter</h3>
-            <form action="#" class="subscribe-form">
-              <input type="text" placeholder="Email Address" />
-            </form>
-          </div>
-        </div>
       </div>
       <!-- .row -->
 
@@ -319,7 +308,6 @@
   </footer>
 </div>
 <!-- Default snippet for navigation -->
-
 <script src="../../../assets/js/jquery-1.11.1.min.js"></script>
 <script src="../../../assets/js/plugins.js"></script>
 <script src="../../../assets/js/app.js"></script>

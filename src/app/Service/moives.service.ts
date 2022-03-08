@@ -21,7 +21,6 @@ export class MoivesService {
 
 
   GetTop3Moive( ) {
-
     return this.http.get(this.baseUrl );
   }
 }

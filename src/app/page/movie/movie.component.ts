@@ -47,10 +47,10 @@ export class MovieComponent implements OnInit {
 this.mService.GetTop3Moive().subscribe(e=>
   this.data=e ,
   er=>console.log(er))
-
+this.sssss=this.ar.snapshot.params["id"]
   }
 
-
+sssss:any
    //LogOut
    logout() {
     this.router.navigateByUrl('/home');

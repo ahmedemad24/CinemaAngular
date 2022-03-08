@@ -25,9 +25,9 @@ export class MoviesComponent implements OnInit {
 
   onSubmit() {
 
-     this.formData.append('Description', "asd" );
+    this.formData.append('Description', "asd" );
     this.formData.append('Name', "asd" );
-     this.formData.append('TraileUrl', "asd" );
+    this.formData.append('TraileUrl', "asd" );
 
 this.service.insertMoive(this.formData).subscribe(e=>console.log(e) , er=>console.log(er) )
 

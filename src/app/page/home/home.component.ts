@@ -18,18 +18,20 @@ import { LoginModel } from 'src/app/model/LoginModel';
 })
 export class HomeComponent implements OnInit {
 
-
+  login:any
+  out:any
+  admin:any
   data:any
-  constructor(
-    private router: Router,
-    public serves: UserService,
-    private toastr: ToastrService,
-    private mService: MoivesService,
-    public dialog: MatDialog
-      ) { }
-      login:any
-      out:any
-      admin:any
+
+  loadAPI?: Promise<any>;
+
+  constructor(private router: Router,public serves: UserService,private toastr: ToastrService,private mService: MoivesService,public dialog: MatDialog)
+  {
+
+
+  }
+
+
   ngOnInit(): void {
     if (localStorage.getItem('token')=='1') {
       this.login=true
@@ -45,8 +47,10 @@ export class HomeComponent implements OnInit {
       this.admin=true
     }
 
-this.mService.GetTop3Moive().subscribe(e=>
-  this.data=e ,
+this.mService.GetTop3Moive().subscribe(e=>(
+  console.log(e ,"eeeeeeeeeeeeee") ,
+  this.data=e )
+  ,
   er=>console.log(er))
 
   }
