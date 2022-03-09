@@ -13,7 +13,6 @@ export class MoivesService {
 
 
   insertMoive(formModel: any  ) {
-
     return this.http.post(this.baseUrl + "/SaveMovies" ,formModel,{withCredentials:true});
   }
 
@@ -23,4 +22,10 @@ export class MoivesService {
   GetTop3Moive( ) {
     return this.http.get(this.baseUrl );
   }
+
+
+  GetMoiveById( id:any ) {
+    return this.http.get<any>(this.baseUrl +'/'+id);
+  }
+
 }

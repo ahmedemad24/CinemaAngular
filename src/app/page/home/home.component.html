@@ -1,53 +1,5 @@
 <div id="site-content">
-  <header class="site-header">
-    <div class="container">
-      <a routerLink="/home" id="branding">
-        <img src="../../../assets/images/logo.png" alt="" class="logo" />
-        <div class="logo-copy">
-          <h1 class="site-title">Company Name</h1>
-          <small class="site-description">Tagline goes here</small>
-        </div>
-      </a>
-      <!-- #branding -->
-
-      <div class="main-navigation">
-        <button type="button" class="menu-toggle">
-          <i class="fa fa-bars"></i>
-        </button>
-        <ul class="menu">
-          <li class="menu-item current-menu-item">
-            <a href="index.html">Home</a>
-          </li>
-          <li class="menu-item">
-            <a *ngIf="!admin" href="about.html">About</a>
-          </li>
-          <li class="menu-item"><a href="review.html">Movie reviews</a></li>
-          <li class="menu-item"><a href="joinus.html">Join us</a></li>
-          <li class="menu-item"><a href="contact.html">Contact</a></li>
-          <li class="menu-item">
-            <a mat-button (click)="openDialogInsertMovies()">Add Movies</a>
-          </li>
-          <li class="menu-item">
-            <a mat-button (click)="openDialogBooking()">Add Booking</a>
-          </li>
-
-          <li class="menu-item">
-            <a *ngIf="!login" mat-button (click)="openDialog()">Register</a>
-          </li>
-          <li class="menu-item">
-            <a *ngIf="!login" mat-button (click)="openDialogToLogin()">Login</a>
-          </li>
-          <li class="menu-item">
-            <a *ngIf="!out" mat-button (click)="logout()">logOut</a>
-          </li>
-        </ul>
-        <!-- .menu -->
-      </div>
-      <!-- .main-navigation -->
-
-      <div class="mobile-navigation"></div>
-    </div>
-  </header>
+  <app-nav-bar></app-nav-bar>
   <main class="main-content">
     <div class="container">
       <div class="page">
@@ -62,20 +14,6 @@
                       alt="Slide 1"
                   /></a>
                 </li>
-                <!-- <li>
-                  <a routerLink="/movie/{{ data[1].id }}"
-                    ><img
-                      src="https://localhost:44385/{{ data[1].photoData }}"
-                      alt="Slide 2"
-                  /></a>
-                </li>
-                <li>
-                  <a routerLink="/movie/{{ data[2].id }}"
-                    ><img
-                      src="https://localhost:44385/{{ data[2].photoData }}"
-                      alt="Slide 3"
-                  /></a>
-                </li> -->
               </ul>
             </div>
           </div>

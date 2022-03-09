@@ -1,22 +1,22 @@
-import { BookingComponent } from './../booking/booking.component';
-import { MoivesService } from './../../Service/moives.service';
-import { MoviesComponent } from './../movies/movies.component';
-import { LoginComponent } from './../login/login.component';
-import { RegisterModel } from './../../model/RegisterModel';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { UserService } from 'src/app/Service/user.service';
-import { RegisterComponent } from '../register/register.component';
 import { LoginModel } from 'src/app/model/LoginModel';
+import { RegisterModel } from 'src/app/model/RegisterModel';
+import { MoivesService } from 'src/app/Service/moives.service';
+import { UserService } from 'src/app/Service/user.service';
+import { BookingComponent } from '../booking/booking.component';
+import { LoginComponent } from '../login/login.component';
+import { MoviesComponent } from '../movies/movies.component';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class NavBarComponent implements OnInit {
 
   login:any
   out:any
@@ -47,21 +47,15 @@ export class HomeComponent implements OnInit {
     }
 
 this.mService.GetTop3Moive().subscribe(e=>(
-  console.log(e ,"eeeeeeeeeeeeee") ,
-  this.data=e )
+   this.data=e )
   ,
   er=>console.log(er))
 
   }
-
-
-   //LogOut
    logout() {
     this.router.navigateByUrl('/home');
-
     localStorage.removeItem('token');
     window.location.reload();
-
   }
 
   openDialog()
@@ -76,17 +70,6 @@ this.mService.GetTop3Moive().subscribe(e=>(
    );
 
  }
- openDialogInsertMovies()
- {
-  const dialogRef = this.dialog.open(MoviesComponent ,{data: RegisterModel});
-
-  dialogRef.afterClosed().subscribe( data=>
-
-   console.log(data,"Login")
-
-  );
-
-}
 
 
 openDialogBooking(){
@@ -96,12 +79,12 @@ openDialogBooking(){
 
 }
 
- openDialogToLogin()
- {
-  const dialogRef = this.dialog.open(LoginComponent,
-    {data: LoginModel});
+openDialogToLogin()
+{
+ const dialogRef = this.dialog.open(LoginComponent,
+   {data: LoginModel});
 
-  dialogRef.afterClosed().subscribe( );
+ dialogRef.afterClosed().subscribe( );
 
 }
 

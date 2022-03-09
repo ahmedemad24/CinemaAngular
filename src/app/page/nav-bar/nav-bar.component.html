@@ -1,0 +1,45 @@
+<header class="site-header">
+  <div class="container">
+    <a routerLink="/home" id="branding">
+      <img src="../../../assets/images/logo.png" alt="" class="logo" />
+      <div class="logo-copy">
+        <h1 class="site-title">Company Name</h1>
+        <small class="site-description">Tagline goes here</small>
+      </div>
+    </a>
+    <!-- #branding -->
+
+    <div class="main-navigation">
+      <button type="button" class="menu-toggle">
+        <i class="fa fa-bars"></i>
+      </button>
+      <ul class="menu">
+        <li class="menu-item current-menu-item">
+          <a routerLink="/home">Home</a>
+        </li>
+        <li class="menu-item">
+          <a *ngIf="!admin" routerLink="/about">About</a>
+        </li>
+
+        <li class="menu-item"><a routerLink="/contact">Contact</a></li>
+        <li class="menu-item">
+          <a mat-button (click)="openDialogBooking()">Add Booking</a>
+        </li>
+
+        <li class="menu-item">
+          <a *ngIf="!login" mat-button (click)="openDialog()">Register</a>
+        </li>
+        <li class="menu-item">
+          <a *ngIf="!login" mat-button (click)="openDialogToLogin()">Login</a>
+        </li>
+        <li class="menu-item">
+          <a *ngIf="!out" mat-button (click)="logout()">logOut</a>
+        </li>
+      </ul>
+      <!-- .menu -->
+    </div>
+    <!-- .main-navigation -->
+
+    <div class="mobile-navigation"></div>
+  </div>
+</header>

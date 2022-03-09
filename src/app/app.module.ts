@@ -52,6 +52,9 @@ import { MatTreeModule } from '@angular/material/tree';
 import { MoviesComponent } from './page/movies/movies.component';
 import { BookingComponent } from './page/booking/booking.component';
 import { MovieComponent } from './page/movie/movie.component';
+import { NavBarComponent } from './page/nav-bar/nav-bar.component';
+import { AboutUsComponent } from './page/about-us/about-us.component';
+import { ContactComponent } from './page/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +64,10 @@ import { MovieComponent } from './page/movie/movie.component';
     LoginComponent,
     MoviesComponent,
     BookingComponent,
-    MovieComponent
+    MovieComponent,
+    NavBarComponent,
+    AboutUsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
