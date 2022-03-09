@@ -3,11 +3,7 @@
     <div class="header">
       <h2>ReasonOfRefuse</h2>
     </div>
-    <form
-      (ngSubmit)="onSubmit()"
-      [formGroup]="formModeule"
-      enctype="multipart/form-data"
-    >
+    <form (ngSubmit)="onSubmit()" style="width: 500px">
       <mat-form-field appearance="fill" style="width: 450px">
         <mat-label>fristName</mat-label>
         <input matInput placeholder="fristName" name="fristName" required />
@@ -28,7 +24,7 @@
           matInput
           formControlName="ProfilePicture"
           #file
-          (change)="onFileChange(file.files)" 
+          (change)="onFileChange(file.files)"
           class="file form-control"
           accept="image/*"
         />
